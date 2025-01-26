@@ -7,7 +7,7 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export XDG_CONFIG_HOME="$HOME/repos"
 export GOPATH="$HOME/go"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${GOPATH}/bin:$HOME/.atuin/bin:$PATH
-# comment
+
 # ================================
 # Prompt Configuration
 # ================================
