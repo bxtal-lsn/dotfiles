@@ -4,10 +4,11 @@
 export ZSH="$HOME/.oh-my-zsh"
 export LANG=C.UTF-8 
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
-export XDG_CONFIG_HOME="$HOME/repos"
+export XDG_CONFIG_HOME="$HOME/.config"
 export GOPATH="$HOME/go"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${GOPATH}/bin:$HOME/.atuin/bin:$PATH
 
+export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH"
 # ================================
 # Prompt Configuration
 # ================================
@@ -42,7 +43,7 @@ else
     export EDITOR='nvim'
 fi
 
-alias v="/opt/nvim-linux64/bin/nvim"
+alias v="/opt/nvim-linux-x86_64/bin/nvim"
 
 # ================================
 # Plugins and Extensions
@@ -156,4 +157,4 @@ start-ssh-agent() {
     ssh-add ~/.ssh/id_rsa
 }
 
-alias dotfiles='git --git-dir=/home/bxtal/dotfiles/.git --work-tree=/home/bxtal'
+alias dotfiles='git --git-dir=/home/bl/dotfiles/.git --work-tree=/home/bl'
