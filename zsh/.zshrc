@@ -3,11 +3,9 @@
 # ================================
 export ZSH="$HOME/.oh-my-zsh"
 export LANG=C.UTF-8 
-export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export XDG_CONFIG_HOME="$HOME/.config"
 export GOPATH="$HOME/go"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${GOPATH}/bin:$HOME/.atuin/bin:$PATH
-
 export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH"
 # ================================
 # Prompt Configuration
