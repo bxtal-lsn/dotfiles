@@ -6,7 +6,11 @@ export LANG=C.UTF-8
 export XDG_CONFIG_HOME="$HOME/.config"
 export GOPATH="$HOME/go"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${GOPATH}/bin:$HOME/.atuin/bin:$PATH
+export PATH=$PATH:/snap/bin
 export PATH="$HOME/.zig/zig-linux-x86_64-0.13.0:$PATH"
+export PATH="$PATH:/opt/mssql-tools18/bin"
+export PASSWORD_STORE_CLIPBOARD_COMMAND="~/.local/bin/win32yank.exe -i"
+# export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 # ================================
 # Prompt Configuration
 # ================================
@@ -41,8 +45,6 @@ else
     export EDITOR='nvim'
 fi
 
-alias v="/opt/nvim-linux-x86_64/bin/nvim"
-
 # ================================
 # Plugins and Extensions
 # ================================
@@ -74,6 +76,10 @@ alias la=tree
 alias cat=batcat
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
+alias lzd='lazydocker'
+alias v="/opt/nvim-linux-x86_64/bin/nvim"
+alias mp="multipass"
+#alias docker='podman'
 
 # Git Aliases
 alias gc="git commit -m"

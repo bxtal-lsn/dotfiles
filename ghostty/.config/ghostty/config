@@ -7,8 +7,8 @@ keybind = ctrl+s>k=goto_split:top
 keybind = ctrl+s>j=goto_split:bottom
 keybind = ctrl+s>h=goto_split:left
 keybind = ctrl+s>l=goto_split:right
-keybind = ctrl+a>l=new_split:right
-keybind = ctrl+a>j=new_split:down
+keybind = ctrl+s>shift+2=new_split:down
+keybind = ctrl+s>shift+5=new_split:right
 keybind = ctrl+s>a=select_all
 keybind = ctrl+s>t=new_tab
 keybind = ctrl+shift+l=next_tab
