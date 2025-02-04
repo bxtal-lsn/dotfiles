@@ -79,7 +79,6 @@ alias pbpaste="xclip -selection clipboard -o"
 alias lzd='lazydocker'
 alias v="/opt/nvim-linux-x86_64/bin/nvim"
 alias mp="multipass"
-#alias docker='podman'
 
 # Git Aliases
 alias gc="git commit -m"
@@ -122,6 +121,10 @@ alias ltree="eza --tree --level=2 --icons --git"
 
 # HTTP Requests
 alias http="xh"
+
+# Kubernetes
+alias k="kubectl"
+alias kga="kubectl get all"
 
 # Function to categorize and list aliases
 list_aliases() {
