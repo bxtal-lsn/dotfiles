@@ -10,7 +10,9 @@ export PATH=$PATH:/snap/bin
 export PATH="$HOME/.zig/zig-linux-x86_64-0.13.0:$PATH"
 export PATH="$PATH:/opt/mssql-tools18/bin"
 export PASSWORD_STORE_CLIPBOARD_COMMAND="~/.local/bin/win32yank.exe -i"
-# export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+export PATH="$PATH:/usr/local/bin"
+export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/.local/bin/:$PATH"
 # ================================
 # Prompt Configuration
 # ================================
@@ -165,3 +167,5 @@ start-ssh-agent() {
 }
 
 alias dotfiles='git --git-dir=/home/bl/dotfiles/.git --work-tree=/home/bl'
+
+. "$HOME/.local/bin/env"
