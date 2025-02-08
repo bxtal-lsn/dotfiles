@@ -169,3 +169,5 @@ start-ssh-agent() {
 alias dotfiles='git --git-dir=/home/bl/dotfiles/.git --work-tree=/home/bl'
 
 . "$HOME/.local/bin/env"
+
+[[ -f ~/.harlequin_aliases ]] && source ~/.harlequin_aliases
