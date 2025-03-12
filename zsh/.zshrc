@@ -116,10 +116,10 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-# Enhanced Directory Listings
-alias l="eza -l --icons --git -a"
-alias lt="eza --tree --level=2 --long --icons --git"
-alias ltree="eza --tree --level=2 --icons --git"
+alias l="eza -l --git"
+alias l1="eza --tree --level=2 --long --git"
+alias l2="eza --tree --level=3 --long --no-permissions --no-user --no-time"
+alias l3="eza --tree --level=4 --no-permissions --no-user --no-time --no-filesize"
 
 # HTTP Requests
 alias http="xh"
