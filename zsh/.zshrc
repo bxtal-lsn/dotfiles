@@ -1,4 +1,12 @@
 # ================================
+# On Startup
+# ================================
+
+if command -v zellij &> /dev/null; then
+  [[ -z "$ZELLIJ" ]] && exec zellij 
+fi
+
+# ================================
 # General Environment Variables
 # ================================
 export ZSH="$HOME/.oh-my-zsh"
@@ -81,6 +89,7 @@ alias pbpaste="xclip -selection clipboard -o"
 alias lzd='lazydocker'
 alias v="/opt/nvim-linux-x86_64/bin/nvim"
 alias mp="multipass"
+alias h='function hdi(){ howdoi $* -c -n 3; }; hdi'
 
 # Git Aliases
 alias gc="git commit -m"
@@ -169,5 +178,3 @@ start-ssh-agent() {
 alias dotfiles='git --git-dir=/home/bl/dotfiles/.git --work-tree=/home/bl'
 
 . "$HOME/.local/bin/env"
-
-[[ -f ~/.harlequin_aliases ]] && source ~/.harlequin_aliases
