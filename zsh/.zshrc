@@ -76,6 +76,8 @@ eval "$(direnv hook zsh)"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+setxkbmap dk
+
 # ================================
 # Useful Aliases
 # ================================
