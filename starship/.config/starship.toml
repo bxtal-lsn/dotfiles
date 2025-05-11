@@ -1,0 +1,240 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](#DCD7BA)\
+[  ](bg:#DCD7BA fg:#1F1F28)\
+[ ](bg:#2D4F67 fg:#DCD7BA)\
+$directory\
+[ ](fg:#2D4F67 bg:#223249)\
+$git_branch\
+$git_status\
+[ ](fg:#223249 bg:#16161D)\
+$nodejs\
+$rust\
+$golang\
+[ ](fg:#16161D bg:#1F1F28)\
+$time\
+[ ](fg:#1F1F28)\
+\n$character"""
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)'
+
+[directory]
+style = "fg:#DCD7BA bg:#2D4F67"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#223249"
+format = '[[ $symbol $branch ](fg:#7E9CD8 bg:#223249)]($style)'
+
+[git_status]
+style = "bg:#223249"
+format = '[[($all_status$ahead_behind )](fg:#7E9CD8 bg:#223249)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#16161D"
+format = '[[ $symbol ($version) ](fg:#76946A bg:#16161D)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#16161D"
+format = '[[ $symbol ($version) ](fg:#C34043 bg:#16161D)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#16161D"
+format = '[[ $symbol ($version) ](fg:#7E9CD8 bg:#16161D)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1F1F28"
+format = '[[  $time ](fg:#C8C093 bg:#1F1F28)]($style)'
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = "  "
+
+[git_commit]
+tag_symbol = "  "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "
+
