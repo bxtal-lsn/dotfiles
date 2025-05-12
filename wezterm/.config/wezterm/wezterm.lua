@@ -1,54 +1,47 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
--- This will hold the configuration.
 local config = wezterm.config_builder()
-
--- This is where you actually apply your config choices.
--- For example, changing the initial geometry for new windows:
 config.initial_cols = 120
 config.initial_rows = 28
 config.default_prog = { "nu" }
--- or, changing the font size and color scheme.
 config.font_size = 10
 config.font = wezterm.font("JetBrains Mono Nerd Font")
 config.color_scheme = "Kanagawa (Gogh)"
-
--- Set up leader key (Ctrl+T) with a timeout
-config.leader = { key = "t", mods = "CTRL", timeout_milliseconds = 1000 }
-
 config.colors = {
 	tab_bar = {
-		background = "#0b0022",
+		background = "#1F1F28", -- Kanagawa sumiInk1 (dark background)
 		active_tab = {
-			bg_color = "#2b2042",
-			fg_color = "#c0c0c0",
-			intensity = "Normal", -- Options: 'Half', 'Normal', 'Bold'
-			underline = "None", -- Options: 'None', 'Single', 'Double'
+			bg_color = "#363646", -- Kanagawa fujiGray (slightly lighter)
+			fg_color = "#DCD7BA", -- Kanagawa fujiWhite (off-white color)
+			intensity = "Normal",
+			underline = "None",
 			italic = false,
 			strikethrough = false,
 		},
+		inactive_tab = {
+			bg_color = "#1F1F28", -- Same as tab bar background
+			fg_color = "#727169", -- Kanagawa fujiGray (muted)
+		},
 	},
 }
+config.window_background_opacity = 0.95
 
-config.window_background_opacity = 0.9
+-- Set up leader key for tabs
+local tab_leader = { key = "t", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = tab_leader
 
 -- Add key bindings
 config.keys = {
-	-- Ctrl+T followed by N creates a new tab
+	-- Tab operations with Ctrl+T as leader
 	{
 		key = "n",
 		mods = "LEADER",
 		action = wezterm.action.SpawnTab("DefaultDomain"),
 	},
-
-	-- Ctrl+T followed by X closes the current tab
 	{
 		key = "x",
 		mods = "LEADER",
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
-
-	-- Ctrl+T followed by R renames the current tab
 	{
 		key = "r",
 		mods = "LEADER",
@@ -62,20 +55,65 @@ config.keys = {
 		}),
 	},
 
-	-- Ctrl+H to go to left tab
+	-- Tab navigation
 	{
 		key = "h",
 		mods = "CTRL",
 		action = wezterm.action.ActivateTabRelative(-1),
 	},
-
-	-- Ctrl+L to go to right tab
 	{
 		key = "l",
 		mods = "CTRL",
 		action = wezterm.action.ActivateTabRelative(1),
 	},
+
+	-- Activate pane mode with Ctrl+P
+	{
+		key = "p",
+		mods = "CTRL",
+		action = wezterm.action.ActivateKeyTable({
+			name = "pane_mode",
+			one_shot = false,
+			timeout_milliseconds = 1000,
+			replace_current = false,
+		}),
+	},
+
+	-- Pane navigation using Ctrl+Shift+HJKL (vim-style)
+	{
+		key = "h",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "j",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "k",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "l",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
 }
 
--- Finally, return the configuration to wezterm:
+-- Define key table for pane operations
+config.key_tables = {
+	pane_mode = {
+		-- 'l' creates a pane to the right
+		{ key = "l", action = wezterm.action.SplitPane({ direction = "Right" }) },
+		-- 'j' creates a pane below
+		{ key = "j", action = wezterm.action.SplitPane({ direction = "Down" }) },
+		-- 'x' closes the current pane
+		{ key = "x", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+		-- Exit pane mode with Escape
+		{ key = "Escape", action = wezterm.action.PopKeyTable },
+	},
+}
+
 return config
