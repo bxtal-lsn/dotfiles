@@ -35,6 +35,7 @@ $env.config.completions.case_sensitive = false
 
 $env.PROMPT_COMMAND = "Nushell"
 $env.PATH ++= [ "~/.local/bin" ]
+$env.PATH ++= [ "~/.cargo/bin" ]
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
@@ -86,3 +87,7 @@ alias l1 = eza --tree --level=2 --long --git
 alias l2 = eza --tree --level=3 --long --no-permissions --no-user --no-time
 alias l3 = eza --tree --level=4 --no-permissions --no-user --no-time --no-filesize
 
+zoxide init nushell | save -f ~/.zoxide.nu
+source ~/.zoxide.nu
+
+source ~/.local/share/atuin/init.nu

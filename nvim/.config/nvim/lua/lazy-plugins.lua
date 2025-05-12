@@ -15,6 +15,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.lint',
 
+  require 'kickstart/plugins/live-preview',
+
   require 'kickstart/plugins/lspconfig',
 
   require 'kickstart/plugins/mini',
