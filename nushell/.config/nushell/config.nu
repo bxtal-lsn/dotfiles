@@ -50,6 +50,7 @@ alias cat = batcat
 alias pbcopy = xclip -selection clipboard
 alias pbpaste = xclip -selection clipboard -o
 alias v = /opt/nvim-linux-x86_64/bin/nvim
+alias md = mkdir
 
 # Git Aliases
 alias gc = git commit -m 

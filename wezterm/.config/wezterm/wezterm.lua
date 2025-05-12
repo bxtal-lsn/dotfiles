@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 -- For example, changing the initial geometry for new windows:
 config.initial_cols = 120
 config.initial_rows = 28
-
+config.default_prog = { "nu" }
 -- or, changing the font size and color scheme.
 config.font_size = 10
 config.font = wezterm.font("JetBrains Mono Nerd Font")
@@ -15,6 +15,22 @@ config.color_scheme = "Kanagawa (Gogh)"
 
 -- Set up leader key (Ctrl+T) with a timeout
 config.leader = { key = "t", mods = "CTRL", timeout_milliseconds = 1000 }
+
+config.colors = {
+	tab_bar = {
+		background = "#0b0022",
+		active_tab = {
+			bg_color = "#2b2042",
+			fg_color = "#c0c0c0",
+			intensity = "Normal", -- Options: 'Half', 'Normal', 'Bold'
+			underline = "None", -- Options: 'None', 'Single', 'Double'
+			italic = false,
+			strikethrough = false,
+		},
+	},
+}
+
+config.window_background_opacity = 0.8
 
 -- Add key bindings
 config.keys = {
