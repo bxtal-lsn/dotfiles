@@ -30,7 +30,7 @@ config.colors = {
 	},
 }
 
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 
 -- Add key bindings
 config.keys = {
