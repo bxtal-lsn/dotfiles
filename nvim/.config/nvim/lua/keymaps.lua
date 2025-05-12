@@ -17,7 +17,24 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- [[ Basic Autocommands ]]
+-- Set <leader>ot to toggle terminal in normal mode
+vim.keymap.set('n', '<leader>ot', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+
+-- Also add the mapping for insert mode
+vim.keymap.set('i', '<leader>ot', '<Esc><cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+
+-- Add terminal-specific keymaps when terminal opens
+vim.api.nvim_create_autocmd('TermOpen', {
+  pattern = 'term://*',
+  callback = function()
+    local opts = { buffer = 0 }
+    -- Map Escape to exit terminal mode to normal mode
+    vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], opts)
+
+    -- Map <leader>ot to close terminal from terminal mode
+    vim.keymap.set('t', '<leader>ot', [[<C-\><C-n><cmd>ToggleTerm<CR>]], opts)
+  end,
+})
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',

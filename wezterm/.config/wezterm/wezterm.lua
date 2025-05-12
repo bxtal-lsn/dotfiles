@@ -100,6 +100,11 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
+	{
+		key = "f",
+		mods = "CTRL",
+		action = wezterm.action.ToggleFullScreen,
+	},
 }
 
 -- Define key table for pane operations

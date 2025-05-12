@@ -27,6 +27,8 @@ require('lazy').setup({
 
   require 'kickstart/plugins/telescope',
 
+  require 'kickstart.plugins.toggleterm',
+
   require 'kickstart/plugins/trouble',
 
   require 'kickstart/plugins/which-key',
