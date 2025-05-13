@@ -29,6 +29,8 @@ $env.config.completions.algorithm = "fuzzy"
 $env.config.completions.sort = "smart"
 $env.config.completions.case_sensitive = false
 
+$env.LANG = "da_DK.utf8"
+$env.LC_ALL = "da_DK.utf8"
 # ---------------------------------------------------------------------------------------
 # Environment Variables
 # ---------------------------------------------------------------------------------------
@@ -85,6 +87,9 @@ alias l = eza -l --git
 alias l1 = eza --tree --level=2 --long --git
 alias l2 = eza --tree --level=3 --long --no-permissions --no-user --no-time
 alias l3 = eza --tree --level=4 --no-permissions --no-user --no-time --no-filesize
+
+
+source ~/.config/scripts/setup-ssh.nu
 
 source ~/.zoxide.nu
 
