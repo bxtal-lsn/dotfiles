@@ -87,7 +87,6 @@ alias l1 = eza --tree --level=2 --long --git
 alias l2 = eza --tree --level=3 --long --no-permissions --no-user --no-time
 alias l3 = eza --tree --level=4 --no-permissions --no-user --no-time --no-filesize
 
-zoxide init nushell | save -f ~/.zoxide.nu
 source ~/.zoxide.nu
 
 source ~/.local/share/atuin/init.nu
