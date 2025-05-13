@@ -36,6 +36,7 @@ $env.config.completions.case_sensitive = false
 $env.PROMPT_COMMAND = "Nushell"
 $env.PATH ++= [ "~/.local/bin" ]
 $env.PATH ++= [ "~/.cargo/bin" ]
+$env.PATH ++= [ "~/go/bin"]
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
@@ -47,9 +48,7 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 # General Aliases
 alias cl = clear
 alias la = tree
-alias cat = batcat
-alias pbcopy = xclip -selection clipboard
-alias pbpaste = xclip -selection clipboard -o
+alias cat = bat
 alias v = /opt/nvim-linux-x86_64/bin/nvim
 alias md = mkdir
 

@@ -1,17 +1,30 @@
 # Bxtal Dotfiles Setup
 
+## Arch Linux Specific
+
+```bash
+sudo pacman -Syu gcc clang zig gopls golang stylua openssl pkg-config zoxide atuin eza starship neovim go-task jujutsu openssh bat
+```
+
 ## Installations
+[install stow](https://man.archlinux.org/man/stow.8)
+```bash
+sudo pacman -Syu stow
+```
 
 [install rust](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 ```bash
 curl https://sh.rustup.rs -sSf | sh
 ```
 
----
-
 [install nushell](https://www.nushell.sh/book/installation.html)
 ```bash
 cargo install nu --locked
+```
+
+[install starship](https://linuxconfig.org/how-to-install-and-configure-starship-on-linux#:~:text=There%20are%20many%20ways%20to%20install%20Starship%20on)
+```bash
+sudo pacman -Syu starship
 ```
 
 ---
