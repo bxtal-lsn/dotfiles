@@ -11,3 +11,5 @@
 
 # Add your Bitbucket key
 ssh-add ~/.ssh/bitbucket
+ssh-add ~/.ssh/id_rsa
+
