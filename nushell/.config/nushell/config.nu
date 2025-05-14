@@ -90,7 +90,5 @@ alias l3 = eza --tree --level=4 --no-permissions --no-user --no-time --no-filesi
 
 
 source ~/.config/scripts/setup-ssh.nu
-
 source ~/.zoxide.nu
-
 source ~/.local/share/atuin/init.nu
