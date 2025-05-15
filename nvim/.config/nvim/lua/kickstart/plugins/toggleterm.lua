@@ -9,7 +9,7 @@ return {
         direction = 'float',
         start_in_insert = true,
         close_on_exit = true,
-        shell = 'nu',
+        shell = 'bash',
       },
     },
   },

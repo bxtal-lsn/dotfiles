@@ -94,19 +94,9 @@ abbr -a aliases "list_aliases"
 # ================================
 # Functions
 # ================================
-# Function to navigate and list directory contents
-function cx
-    cd $argv && l
-end
-
-# Navigate to a directory using FZF
-function fcd
-    cd (find . -type d -not -path '*/.*' | fzf) && l
-end
-
 # Find a file and copy its path
-function f
-    echo (find . -type f -not -path '*/.*' | fzf) | pbcopy
+function fc
+    echo (find . -type f -not -path '*/.*' | fzf) | clip.exe
 end
 
 # Open a file selected via FZF in Neovim
@@ -122,3 +112,5 @@ function start-ssh-agent
     ssh-add ~/.ssh/id_rsa
     ssh-add ~/.ssh/bitbucket
 end
+
+set fish_greeting ""
