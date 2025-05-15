@@ -3,7 +3,7 @@
 ## Arch Linux Specific
 
 ```bash
-sudo pacman -Syu gcc clang zig gopls golang stylua openssl pkg-config zoxide atuin eza starship neovim go-task jujutsu openssh bat ripgrep glibc unzip
+sudo pacman -Syu gcc clang zig gopls golang stylua openssl pkg-config zoxide atuin eza starship neovim go-task jujutsu openssh bat ripgrep glibc unzip stow 
 ```
 
 ## Installations

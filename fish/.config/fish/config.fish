@@ -42,9 +42,10 @@ command -q setxkbmap && setxkbmap dk
 abbr -a cl 'clear'
 abbr -a la 'tree'
 abbr -a cat 'bat'
-abbr -a v "/opt/nvim-linux-x86_64/bin/nvim"
+abbr v "/opt/nvim-linux-x86_64/bin/nvim"
 abbr -a md "mkdir"
 abbr -a mdp "mkdir -p"
+abbr -a rmr "rm -r"
 
 # Git Abbreviations
 abbr -a gc "git commit -m"
