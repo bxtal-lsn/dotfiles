@@ -96,12 +96,12 @@ abbr -a aliases "list_aliases"
 # Functions
 # ================================
 # Find a file and copy its path
-function fc
+function sc
     echo (find . -type f -not -path '*/.*' | fzf) | clip.exe
 end
 
 # Open a file selected via FZF in Neovim
-function fv
+function sf
     nvim (find . -type f -not -path '*/.*' | fzf)
 end
 
