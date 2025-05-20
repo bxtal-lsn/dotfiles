@@ -3,12 +3,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.showmode = false
 
--- Fixed WSL detection function
 local function is_wsl()
 	local wsl_distro_path = "/proc/sys/fs/binfmt_misc/WSLInterop"
 	local has_wsl_interop = vim.fn.filereadable(wsl_distro_path) == 1
 
-	-- Fallback to checking /proc/version if file doesn't exist
 	if not has_wsl_interop then
 		local f = io.open("/proc/version", "r")
 		if f then
